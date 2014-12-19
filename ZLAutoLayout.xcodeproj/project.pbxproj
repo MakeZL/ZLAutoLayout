@@ -12,6 +12,7 @@
 		487785FA1A44041D00BB963A /* ZLDemo3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487785F91A44041D00BB963A /* ZLDemo3ViewController.m */; };
 		487785FD1A44047900BB963A /* ZLDemo4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487785FC1A44047900BB963A /* ZLDemo4ViewController.m */; };
 		487786011A440A0F00BB963A /* UIView+ZLAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 487786001A440A0F00BB963A /* UIView+ZLAutoLayout.m */; };
+		487786041A440D0C00BB963A /* ZLDemo5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487786031A440D0C00BB963A /* ZLDemo5ViewController.m */; };
 		48E611521A30578400302FA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E611511A30578400302FA8 /* main.m */; };
 		48E611551A30578400302FA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E611541A30578400302FA8 /* AppDelegate.m */; };
 		48E611581A30578400302FA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E611571A30578400302FA8 /* ViewController.m */; };
@@ -41,6 +42,8 @@
 		487785FC1A44047900BB963A /* ZLDemo4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLDemo4ViewController.m; sourceTree = "<group>"; };
 		487785FF1A440A0F00BB963A /* UIView+ZLAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZLAutoLayout.h"; sourceTree = "<group>"; };
 		487786001A440A0F00BB963A /* UIView+ZLAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZLAutoLayout.m"; sourceTree = "<group>"; };
+		487786021A440D0C00BB963A /* ZLDemo5ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLDemo5ViewController.h; sourceTree = "<group>"; };
+		487786031A440D0C00BB963A /* ZLDemo5ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLDemo5ViewController.m; sourceTree = "<group>"; };
 		48E6114C1A30578400302FA8 /* ZLAutoLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLAutoLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E611501A30578400302FA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48E611511A30578400302FA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 				487785F91A44041D00BB963A /* ZLDemo3ViewController.m */,
 				487785FB1A44047900BB963A /* ZLDemo4ViewController.h */,
 				487785FC1A44047900BB963A /* ZLDemo4ViewController.m */,
+				487786021A440D0C00BB963A /* ZLDemo5ViewController.h */,
+				487786031A440D0C00BB963A /* ZLDemo5ViewController.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 				487785FD1A44047900BB963A /* ZLDemo4ViewController.m in Sources */,
 				487786011A440A0F00BB963A /* UIView+ZLAutoLayout.m in Sources */,
 				48E611581A30578400302FA8 /* ViewController.m in Sources */,
+				487786041A440D0C00BB963A /* ZLDemo5ViewController.m in Sources */,
 				487785FA1A44041D00BB963A /* ZLDemo3ViewController.m in Sources */,
 				487785F71A4403EC00BB963A /* ZLDemo2ViewController.m in Sources */,
 				48E611551A30578400302FA8 /* AppDelegate.m in Sources */,
@@ -378,6 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZLAutoLayout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -388,6 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZLAutoLayout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

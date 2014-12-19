@@ -26,7 +26,8 @@
                    @"Basic frame transform autoLayout",
                    @"One view EqualSuperView autoLayout",
                    @"One View Add Left && Width/Size Constraint",
-                   @"Two View Add Constraint"
+                   @"Two View Add Constraint",
+                   @"View Add CenterX/Y Constraint",
                    ];
     }
     return _demos;

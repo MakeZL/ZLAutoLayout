@@ -193,4 +193,28 @@ static NSMutableArray *_layouts;
     return constraint;
 }
 
+/**
+ *  Set view -> superView centerX/Y + inset(options)
+ *
+ *  @param align ZLAutoLayoutAlign
+ */
+- (void)autoSetAlignToSuperView:(ZLAutoLayoutAlign)align{
+    [self autoPinDirection:(ZLAutoLayoutDirection)align toPinDirection:(ZLAutoLayoutDirection)align ofView:self.superview];
+}
+- (void)autoSetAlignToSuperView:(ZLAutoLayoutAlign)align withInset:(CGFloat)inset{
+    [self autoPinDirection:(ZLAutoLayoutDirection)align toPinDirection:(ZLAutoLayoutDirection)align ofView:self.superview withInset:inset];
+}
+
+/**
+ *  Set view -> ofView centerX/Y + inset(options)
+ *
+ *  @param align ZLAutoLayoutAlign
+ */
+- (void)autoSetAlign:(ZLAutoLayoutAlign)align ofView:(UIView *)ofView{
+    [self autoPinDirection:(ZLAutoLayoutDirection)align toPinDirection:(ZLAutoLayoutDirection)align ofView:ofView];
+}
+- (void)autoSetAlign:(ZLAutoLayoutAlign)align ofView:(UIView *)ofView withInset:(CGFloat)inset{
+    [self autoPinDirection:(ZLAutoLayoutDirection)align toPinDirection:(ZLAutoLayoutDirection)align ofView:ofView withInset:inset];
+}
+
 @end
