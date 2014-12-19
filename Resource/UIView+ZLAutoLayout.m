@@ -15,7 +15,7 @@ static NSMutableArray *_layouts;
 @implementation UIView (ZLAutoLayout)
 
 + (instancetype) instanceAutoLayoutView{
-    UIView *autoLayoutView = [[UIView alloc] init];
+    UIView *autoLayoutView = [[self alloc] init];
     autoLayoutView.translatesAutoresizingMaskIntoConstraints = NO;
     return autoLayoutView;
     
@@ -172,6 +172,9 @@ static NSMutableArray *_layouts;
 }
 
 - (NSLayoutConstraint *) ZLAutoLayoutConstraint:(ZLAutoLayoutDirection)direction toPinDirection:(ZLAutoLayoutDirection)toDircetion ofView:(UIView *)ofView withInset:(CGFloat)inset{
+    
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    ofView.translatesAutoresizingMaskIntoConstraints = NO;
     
     switch (direction) {
         case ZLAutoLayoutDirectionBottom:
