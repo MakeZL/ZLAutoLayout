@@ -63,12 +63,12 @@ static NSMutableArray *_layouts;
     return _layout;
 }
 
-- (void)addSubview:(UIView *)view{
-    [self insertSubview:view atIndex:view.subviews.count];
-    if (view == self) {
-        [self setupLayouts:@[view]];
-    }
-}
+//- (void)addSubview:(UIView *)view{
+//    [self insertSubview:view atIndex:view.subviews.count];
+//    if (view == self) {
+//        [self setupLayouts:@[view]];
+//    }
+//}
 
 #pragma mark - Current view EqualTo ofView autoLayout.
 /**
@@ -84,16 +84,20 @@ static NSMutableArray *_layouts;
 }
 
 #pragma mark - Current view EqualTo ofView autoLayout + inset.
+
+- (void)autoPinDirection:(ZLAutoLayoutDirection)direction toPinDirection:(ZLAutoLayoutDirection)toDircetion ofView:(UIView *)ofView withInset:(CGFloat)inset{
+    [self ZLAutoLayoutConstraint:direction toPinDirection:toDircetion ofView:ofView withInset:inset];
+}
 /**
  *  Current view EqualTo ofView autoLayout + inset.
  *
  *  @param direction    ZLAutoLayoutDirection
+ *  @param direction    multiplier
  *  @param toDircetion  OfView ZLAutoLayoutDirection
  *  @param withInset    Inset
  */
-- (void)autoPinDirection:(ZLAutoLayoutDirection)direction toPinDirection:(ZLAutoLayoutDirection)toDircetion ofView:(UIView *)ofView withInset:(CGFloat)inset{
-    
-    [self ZLAutoLayoutConstraint:direction toPinDirection:toDircetion ofView:ofView withInset:inset];
+- (void)autoPinDirection:(ZLAutoLayoutDirection)direction toPinDirection:(ZLAutoLayoutDirection)toDircetion ofView:(UIView *)ofView multiplier:(CGFloat)multiplier withInset:(CGFloat)inset{
+    [self ZLAutoLayoutConstraint:direction toPinDirection:toDircetion ofView:ofView multiplier:multiplier withInset:inset];
     
 }
 
@@ -171,10 +175,9 @@ static NSMutableArray *_layouts;
     [self ZLAutoLayoutConstraint:direction toPinDirection:toDircetion ofView:ofView withInset:0];
 }
 
-- (NSLayoutConstraint *) ZLAutoLayoutConstraint:(ZLAutoLayoutDirection)direction toPinDirection:(ZLAutoLayoutDirection)toDircetion ofView:(UIView *)ofView withInset:(CGFloat)inset{
+- (NSLayoutConstraint *) ZLAutoLayoutConstraint:(ZLAutoLayoutDirection)direction toPinDirection:(ZLAutoLayoutDirection)toDircetion ofView:(UIView *)ofView multiplier:(CGFloat)multiplier withInset:(CGFloat)inset{
     
     self.translatesAutoresizingMaskIntoConstraints = NO;
-    ofView.translatesAutoresizingMaskIntoConstraints = NO;
     
     switch (direction) {
         case ZLAutoLayoutDirectionBottom:
@@ -185,15 +188,14 @@ static NSMutableArray *_layouts;
             break;
     }
     
-    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:[self ZLAutoLayoutAttribute:direction] relatedBy:NSLayoutRelationEqual toItem:ofView attribute:[self ZLAutoLayoutAttribute:toDircetion] multiplier:1.0 constant:inset];
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:[self ZLAutoLayoutAttribute:direction] relatedBy:NSLayoutRelationEqual toItem:ofView attribute:[self ZLAutoLayoutAttribute:toDircetion] multiplier:multiplier constant:inset];
     
-    if (ofView) {
-        [self.superview addConstraint:constraint];
-    }else{
-        [self addConstraint:constraint];
-    }
-    
+    [self.superview addConstraint:constraint];
     return constraint;
+}
+
+- (NSLayoutConstraint *) ZLAutoLayoutConstraint:(ZLAutoLayoutDirection)direction toPinDirection:(ZLAutoLayoutDirection)toDircetion ofView:(UIView *)ofView withInset:(CGFloat)inset{
+    return [self ZLAutoLayoutConstraint:direction toPinDirection:toDircetion ofView:ofView multiplier:1.0 withInset:inset];
 }
 
 /**
