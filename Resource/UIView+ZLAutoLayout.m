@@ -194,6 +194,7 @@ static NSMutableArray *_layouts;
     return constraint;
 }
 
+#pragma mark - setAutoLayout
 - (NSLayoutConstraint *) ZLAutoLayoutConstraint:(ZLAutoLayoutDirection)direction toPinDirection:(ZLAutoLayoutDirection)toDircetion ofView:(UIView *)ofView withInset:(CGFloat)inset{
     return [self ZLAutoLayoutConstraint:direction toPinDirection:toDircetion ofView:ofView multiplier:1.0 withInset:inset];
 }
@@ -222,4 +223,16 @@ static NSMutableArray *_layouts;
     [self autoPinDirection:(ZLAutoLayoutDirection)align toPinDirection:(ZLAutoLayoutDirection)align ofView:ofView withInset:inset];
 }
 
+/**
+ *  remove view to superView autoLayout
+ */
+#pragma mark - remove view to superView autoLayout
+- (void)removeAutoLayout{
+    [self removeConstraints:self.constraints];
+    for (NSLayoutConstraint *constraint in self.superview.constraints) {
+        if ([constraint.firstItem isEqual:self]) {
+            [self.superview removeConstraint:constraint];
+        }
+    }
+}
 @end

@@ -114,4 +114,9 @@ typedef NS_ENUM(NSUInteger, ZLAutoLayoutAlign){
  */
 - (void)autoEqualToSuperViewAutoLayouts;
 
+/**
+ *  remove view to superView autoLayout
+ */
+- (void)removeAutoLayout;
+
 @end
