@@ -229,7 +229,7 @@ static NSMutableArray *_layouts;
  *  remove view to superView autoLayout
  */
 #pragma mark - remove view to superView autoLayout
-- (void)removeAutoLayout{
+- (void)removeAllAutoLayout{
     [self removeConstraints:self.constraints];
     for (ZLLayoutConstraint *constraint in self.superview.constraints) {
         if ([constraint.firstItem isEqual:self]) {
