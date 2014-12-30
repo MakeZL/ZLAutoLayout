@@ -11,6 +11,7 @@
 
 @interface ZLDemo6ViewController ()
 @property (weak,nonatomic) UIView *redView;
+@property (strong,nonatomic) NSArray *constraints;
 @end
 
 @implementation ZLDemo6ViewController
@@ -25,7 +26,7 @@
     
     [redView autoSetAlignToSuperView:ZLAutoLayoutAlignHorizontal];
     [redView autoSetAlignToSuperView:ZLAutoLayoutAlignVertical];
-    [redView autoSetViewSize:CGSizeMake(150, 150)];
+    self.constraints = [redView autoSetViewSize:CGSizeMake(150, 150)];
     [redView layoutIfNeeded];
     
     [self startAnimation];
@@ -33,11 +34,8 @@
 
 - (void)startAnimation{
     
-    [self.redView removeAutoLayout];
-    
-    [self.redView autoSetAlignToSuperView:ZLAutoLayoutAlignHorizontal];
-    [self.redView autoSetAlignToSuperView:ZLAutoLayoutAlignVertical];
-    [self.redView autoSetViewSize:CGSizeMake(150, 150)];
+    [self.redView removeAutoLayoutConstraints:self.constraints];
+    self.constraints = [self.redView autoSetViewSize:CGSizeMake(150, 150)];
     
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
@@ -49,11 +47,8 @@
 
 - (void)startAnimation2{
     
-    [self.redView removeAutoLayout];
-    
-    [self.redView autoSetAlignToSuperView:ZLAutoLayoutAlignHorizontal];
-    [self.redView autoSetAlignToSuperView:ZLAutoLayoutAlignVertical];
-    [self.redView autoSetViewSize:CGSizeMake(300, 300)];
+    [self.redView removeAutoLayoutConstraints:self.constraints];
+    self.constraints = [self.redView autoSetViewSize:CGSizeMake(300, 300)];
     
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{

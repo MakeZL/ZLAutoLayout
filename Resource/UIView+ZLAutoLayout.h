@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NSLayoutConstraint ZLLayoutConstraint;
+
 typedef NS_ENUM(NSUInteger, ZLAutoLayoutDirection){
     /** The left of the view. */
     ZLAutoLayoutDirectionLeft = NSLayoutAttributeLeft,
@@ -50,7 +52,7 @@ typedef NS_ENUM(NSUInteger, ZLAutoLayoutAlign){
  *
  *  @param direction    ZLAutoLayoutDirection
  */
-- (void)autoPinSuperViewDirection:(ZLAutoLayoutDirection)direction;
+- (ZLLayoutConstraint *)autoPinSuperViewDirection:(ZLAutoLayoutDirection)direction;
 
 /**
  *  Current view EqualTo superView autoLayout + inset.
@@ -58,7 +60,7 @@ typedef NS_ENUM(NSUInteger, ZLAutoLayoutAlign){
  *  @param direction    ZLAutoLayoutDirection
  *  @param withInset    Inset
  */
-- (void)autoPinSuperViewDirection:(ZLAutoLayoutDirection)direction withInset:(CGFloat)inset;
+- (ZLLayoutConstraint *)autoPinSuperViewDirection:(ZLAutoLayoutDirection)direction withInset:(CGFloat)inset;
 
 /**
  *  Current view EqualTo ofView autoLayout.
@@ -66,7 +68,7 @@ typedef NS_ENUM(NSUInteger, ZLAutoLayoutAlign){
  *  @param direction    ZLAutoLayoutDirection
  *  @param toDircetion  OfView ZLAutoLayoutDirection
  */
-- (void)autoPinDirection:(ZLAutoLayoutDirection)direction toPinDirection:(ZLAutoLayoutDirection)toDircetion ofView:(UIView *)view;
+- (ZLLayoutConstraint *)autoPinDirection:(ZLAutoLayoutDirection)direction toPinDirection:(ZLAutoLayoutDirection)toDircetion ofView:(UIView *)view;
 
 /**
  *  Current view EqualTo ofView autoLayout + inset.
@@ -75,15 +77,15 @@ typedef NS_ENUM(NSUInteger, ZLAutoLayoutAlign){
  *  @param toDircetion  OfView ZLAutoLayoutDirection
  *  @param withInset    Inset
  */
-- (void)autoPinDirection:(ZLAutoLayoutDirection)direction toPinDirection:(ZLAutoLayoutDirection)toDircetion ofView:(UIView *)view withInset:(CGFloat)inset;
+- (ZLLayoutConstraint *)autoPinDirection:(ZLAutoLayoutDirection)direction toPinDirection:(ZLAutoLayoutDirection)toDircetion ofView:(UIView *)view withInset:(CGFloat)inset;
 
-- (void)autoPinDirection:(ZLAutoLayoutDirection)direction toPinDirection:(ZLAutoLayoutDirection)toDircetion ofView:(UIView *)ofView multiplier:(CGFloat)multiplier withInset:(CGFloat)inset;
+- (ZLLayoutConstraint *)autoPinDirection:(ZLAutoLayoutDirection)direction toPinDirection:(ZLAutoLayoutDirection)toDircetion ofView:(UIView *)ofView multiplier:(CGFloat)multiplier withInset:(CGFloat)inset;
 
 /**
  *  Set view width && height
  */
-- (void)autoSetViewSize:(CGSize)size;
-- (void)autoSetViewSizeWidthOrHeight:(ZLAutoLayoutSize)alSize withInset:(CGFloat)inset;
+- (NSMutableArray *)autoSetViewSize:(CGSize)size;
+- (ZLLayoutConstraint *)autoSetViewSizeWidthOrHeight:(ZLAutoLayoutSize)alSize withInset:(CGFloat)inset;
 
 /**
  *  Set view width || height -> ofView
@@ -91,32 +93,40 @@ typedef NS_ENUM(NSUInteger, ZLAutoLayoutAlign){
  *  @param alSize ZLAutoLayoutSize
  *  @param ofView ofView
  */
-- (void)autoSetViewSizeWidthOrHeight:(ZLAutoLayoutSize)alSize ofView:(UIView *)ofView;
+- (ZLLayoutConstraint *)autoSetViewSizeWidthOrHeight:(ZLAutoLayoutSize)alSize ofView:(UIView *)ofView;
 
 /**
  *  Set view -> superView centerX/Y + inset(options)
  *
  *  @param align ZLAutoLayoutAlign
  */
-- (void)autoSetAlignToSuperView:(ZLAutoLayoutAlign)align;
-- (void)autoSetAlignToSuperView:(ZLAutoLayoutAlign)align withInset:(CGFloat)inset;
+- (ZLLayoutConstraint *)autoSetAlignToSuperView:(ZLAutoLayoutAlign)align;
+- (ZLLayoutConstraint *)autoSetAlignToSuperView:(ZLAutoLayoutAlign)align withInset:(CGFloat)inset;
 
 /**
  *  Set view -> ofView centerX/Y + inset(options)
  *
  *  @param align ZLAutoLayoutAlign
  */
-- (void)autoSetAlign:(ZLAutoLayoutAlign)align ofView:(UIView *)ofView;
-- (void)autoSetAlign:(ZLAutoLayoutAlign)align ofView:(UIView *)ofView withInset:(CGFloat)inset;
+- (ZLLayoutConstraint *)autoSetAlign:(ZLAutoLayoutAlign)align ofView:(UIView *)ofView;
+- (ZLLayoutConstraint *)autoSetAlign:(ZLAutoLayoutAlign)align ofView:(UIView *)ofView withInset:(CGFloat)inset;
 
 /**
  *  Equal view to superView autoLayout
  */
-- (void)autoEqualToSuperViewAutoLayouts;
+- (NSArray *)autoEqualToSuperViewAutoLayouts;
 
 /**
- *  remove view to superView autoLayout
+ *  remove view to superView All autoLayout
  */
-- (void)removeAutoLayout;
+- (void)removeAllAutoLayout;
+/**
+ *  remove single constraint
+ */
+- (void)removeAutoLayout:(ZLLayoutConstraint *)constraint;
+/*
+ *  remove constraints
+ */
+- (void)removeAutoLayoutConstraints:(NSArray *)constraints;
 
 @end
