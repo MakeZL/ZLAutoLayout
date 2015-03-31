@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4808221F1ACA6C9B001E9595 /* ZLDemo7ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4808221E1ACA6C9B001E9595 /* ZLDemo7ViewController.m */; };
 		4843A5FD1A4F068000E10569 /* ZLDemo6ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4843A5FC1A4F068000E10569 /* ZLDemo6ViewController.m */; };
 		487785F41A44030900BB963A /* ZLDemo1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487785F31A44030900BB963A /* ZLDemo1ViewController.m */; };
 		487785F71A4403EC00BB963A /* ZLDemo2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487785F61A4403EC00BB963A /* ZLDemo2ViewController.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4808221D1ACA6C9B001E9595 /* ZLDemo7ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLDemo7ViewController.h; sourceTree = "<group>"; };
+		4808221E1ACA6C9B001E9595 /* ZLDemo7ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLDemo7ViewController.m; sourceTree = "<group>"; };
 		4843A5FB1A4F068000E10569 /* ZLDemo6ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLDemo6ViewController.h; sourceTree = "<group>"; };
 		4843A5FC1A4F068000E10569 /* ZLDemo6ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLDemo6ViewController.m; sourceTree = "<group>"; };
 		487785F21A44030900BB963A /* ZLDemo1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLDemo1ViewController.h; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 				487786031A440D0C00BB963A /* ZLDemo5ViewController.m */,
 				4843A5FB1A4F068000E10569 /* ZLDemo6ViewController.h */,
 				4843A5FC1A4F068000E10569 /* ZLDemo6ViewController.m */,
+				4808221D1ACA6C9B001E9595 /* ZLDemo7ViewController.h */,
+				4808221E1ACA6C9B001E9595 /* ZLDemo7ViewController.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 				487785F71A4403EC00BB963A /* ZLDemo2ViewController.m in Sources */,
 				48E611551A30578400302FA8 /* AppDelegate.m in Sources */,
 				487785F41A44030900BB963A /* ZLDemo1ViewController.m in Sources */,
+				4808221F1ACA6C9B001E9595 /* ZLDemo7ViewController.m in Sources */,
 				48E611521A30578400302FA8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
